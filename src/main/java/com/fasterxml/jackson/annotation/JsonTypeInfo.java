@@ -288,6 +288,8 @@ public @interface JsonTypeInfo
      */
     public boolean visible() default false;
 
+    public ApplyTo applyTo() default ApplyTo.ELEMENTS;
+
     // 19-Dec-2014, tatu: Was hoping to implement for 2.5, but didn't quite make it.
     //   Hope for better luck with 2.8 or later
     /**
@@ -316,4 +318,10 @@ public @interface JsonTypeInfo
      */
     @Deprecated
     public abstract static class None { }
+
+    public static enum ApplyTo {
+        VALUE,
+        ELEMENTS,
+        BOTH
+    }
 }
